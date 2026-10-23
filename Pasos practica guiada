@@ -1,0 +1,29 @@
+1. Limpiar docker 
+    Instalar git y curl
+        sudo apt-get install git
+        sudo apt-get install curl
+
+    Limpieza de docker
+        docker stop $(docker ps -a -q)
+        docker rm $ (docker ps -a -q)
+
+    Descargar imagen
+        docker pull nginx:alpine
+
+2. Contenedor temporal
+    docker run --rm -p 8080:80 nginx:alpine
+
+2.1- Crear contenedor
+    docker create -it -p 8080:80 --name servidor_web nginx:alpine
+
+3. Leventar contenedor
+    Docker start servidor_web
+
+4. comprobar funcionamiento del mapeo de puerto
+    curl localhost:8080
+    https://localhost:8080    
+
+5. Copiar la web 
+    Clonar contenedor en la maquina real
+        git clone https://github.com/Buigues17/Practicas_Docker.git
+    Copiar web del host del contenedor
